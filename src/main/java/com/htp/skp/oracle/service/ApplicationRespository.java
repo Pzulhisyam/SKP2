@@ -1,0 +1,17 @@
+package com.htp.skp.oracle.service;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.stereotype.Repository;
+
+import com.htp.skp.oracle.entity.APPLICATION;
+
+
+@Repository
+public interface ApplicationRespository extends JpaRepository<APPLICATION, String> {
+	String query = "SELECT a.APPLID, a.APPLDATE, a.APPLSTAT,a.APPLPRIORITY, a.PROCSERNO, a.DATEOFARRIVAL, a.DATEOFAPPROVAL, a.RELATIONCODE,a.TEMPORARYID, a.OWNERCAT, a.KPTNO, a.COLLCENTER, a.COLLKPTNO, a.IDTYPE, a.IDNO, a.APPNTCARDVERNO, a.LICIDTYPE, a.LICIDNO, a.APPLREMARKS, a.SUPVSRNOTES, a.DISTRICTCODE, a.APPLCANCELDATE, a.APPLCANCELCODE, a.BRANCHCODE, a.USERID, a.WSID, a.TIMESTAMP, a.QTICKETNO, a.APPLSTAGE, a.LOSTRECEIPTFLAG, a.QCFLAG, a.MISSEDOPEXFLAG, a.SUMMIND, a.SPONSORIDTYPE, a.SPONSORIDNO, a.SSCBRANCHCODE, a.GENDER, a.PHOTOCAPTURE, a.SUMMPAYMIND, a.LOSSCARDIND, a.CARDCOLLDATE, a.BIRTHDATE, a.AGENCYONCHIP, a.NEWOWNERCAT, a.CONTACTNO, a.MEPSCASH, a.LOSSOFDL, a.PRBSTATUS, a.OFFICCOLORCODE, a.OLDAPPLID, a.TEMPIDEXPDATE, a.TEMPIDSERNO, a.CARDLOSTCOUNT, a.LOADDL, a.IMMEXPIRYDATE, a.PDLRENEWTYPE, a.APRVLDOCNO, a.OLDKPTNO, a.JOINDATE, a.NAMECHGCODE, a.NAMEREGDATE, a.LEGAPPLID FROM APPLICATION a WHERE a.APPLSTAT = 'R' AND a.TIMESTAMP BETWEEN TO_DATE (:start,'YYYY/MM/DD') AND TO_DATE (:end,'YYYY/MM/DD')";
+	 @Query(value = query, nativeQuery = true)
+	 List<APPLICATION> findAllRecord(String start, String end);
+}

@@ -1,0 +1,775 @@
+package com.htp.skp.oracle.entity;
+
+import java.util.Date;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class APPNT_JPN_INFO {
+	@Id private String APPLID;
+
+	private String KPTNO;
+	private String KPPNO;
+	private String GENDER ;
+	private Date BIRTHDATE ;
+	private String UNKNOWNBIRTHIND ;
+	private String RELIGIONCODE; 
+	private String RACECODE;
+	private String CITIZENSHIPSTATCODE; 
+	private String HKIND ;
+	private String ORIGNAME;
+	private String CURRLONGNAME;
+	private String CURRSHORTNAME1;
+	private String CURRSHORTNAME2;
+	private String GMPCSHORTNAME1;
+	private String GMPCSHORTNAME2;
+	private String GMPCSHORTNAME3;
+	private String ADDRESS1;
+	private String ADDRESS2;
+	private String ADDRESS3;
+	private String POSTCODE;
+	private String CITYCODE;
+	private String STATECODE;
+	private String JPNREMARKS1;
+	private String JPNREMARKS2;
+	private String IDTYPE;
+	private String IDNO;
+	private String BIRTHPLACE;
+	private String HSCCOLORCODE;
+	private String RESTRICRESIDCODE;
+	private String RJIND;
+	private String COUNTRYOFORIGIN;
+	private String APPNTREMARKS;
+	private String SUPVRNOTES;
+	private String INVSERVICEFLAG;
+	private String RESIDENTSTAT;
+	private String PERSONSTATCODE;
+	private Date LASTADDCHANGEDATE;
+	private String AFISFLAG;
+	private Integer CARDLOSTCNT;
+	private Date LASTKPTISSUEDDATE;
+	private String KPTAPPLSTAT;
+	private String KTINDCODE;
+	private Date POLMILITARYJOINDATE;
+	private Date RETIREMENTDATE;
+	private String ORIGNAMEIND;
+	private String CITIZENNATIONCODE;
+	private Date APPLAPPROVALDATE;
+	private Date GREENCARDEXPDATE;
+	private String IMMREFNO;
+	private Date IMMREFDATE;
+	private Date IMMEXPDATE ; 
+	private String PASSPORTNO; 
+	private Date PASSPORTISSUEDDATE ; 
+	private String PASSPORTISSUECOUNTRY; 
+	private Date RJSTARTDATE ; 
+	private Date RJENDDATE ; 
+	private Date KTSTARTDATE ;
+	private Date KTENDDATE ;
+	private String JKIND ; 
+	private String  BLKLSTCODE;
+	private String AFISBYPASS;  
+	private String  PERMITNO;
+	private Date PERMITISSUEDATE ; 
+	private Integer PERMITTYPE  ;
+	private Integer  PRDOCTYPE;
+	private Integer  LOSTCNTNEG;
+	private Integer  LOSTCNTCRIME;
+	private Integer LOSTCNTDIS;
+	private String KTAREACODE;
+	private String APJAREACODE;
+	
+	public APPNT_JPN_INFO() {
+	}
+	
+	public APPNT_JPN_INFO(String aPPLID, String kPTNO, String kPPNO, String gENDER, Date bIRTHDATE,
+			String uNKNOWNBIRTHIND, String rELIGIONCODE, String rACECODE, String cITIZENSHIPSTATCODE, String hKIND,
+			String oRIGNAME, String cURRLONGNAME, String cURRSHORTNAME1, String cURRSHORTNAME2, String gMPCSHORTNAME1,
+			String gMPCSHORTNAME2, String gMPCSHORTNAME3, String aDDRESS1, String aDDRESS2, String aDDRESS3,
+			String pOSTCODE, String cITYCODE, String sTATECODE, String jPNREMARKS1, String jPNREMARKS2, String iDTYPE,
+			String iDNO, String bIRTHPLACE, String hSCCOLORCODE, String rESTRICRESIDCODE, String rJIND,
+			String cOUNTRYOFORIGIN, String aPPNTREMARKS, String sUPVRNOTES, String iNVSERVICEFLAG,
+			String rESIDENTSTAT, String pERSONSTATCODE, Date lASTADDCHANGEDATE, String aFISFLAG, Integer cARDLOSTCNT,
+			Date lASTKPTISSUEDDATE, String kPTAPPLSTAT, String kTINDCODE, Date pOLMILITARYJOINDATE,
+			Date rETIREMENTDATE, String oRIGNAMEIND, String cITIZENNATIONCODE, Date aPPLAPPROVALDATE,
+			Date gREENCARDEXPDATE, String iMMREFNO, Date iMMREFDATE, Date iMMEXPDATE, String pASSPORTNO,
+			Date pASSPORTISSUEDDATE, String pASSPORTISSUECOUNTRY, Date rJSTARTDATE, Date rJENDDATE, Date kTSTARTDATE,
+			Date kTENDDATE, String jKIND, String bLKLSTCODE, String aFISBYPASS, String pERMITNO, Date pERMITISSUEDATE,
+			Integer pERMITTYPE, Integer pRDOCTYPE, Integer lOSTCNTNEG, Integer lOSTCNTCRIME, Integer lOSTCNTDIS,
+			String kTAREACODE, String aPJAREACODE) {
+		super();
+		APPLID = aPPLID;
+		KPTNO = kPTNO;
+		KPPNO = kPPNO;
+		GENDER = gENDER;
+		BIRTHDATE = bIRTHDATE;
+		UNKNOWNBIRTHIND = uNKNOWNBIRTHIND;
+		RELIGIONCODE = rELIGIONCODE;
+		RACECODE = rACECODE;
+		CITIZENSHIPSTATCODE = cITIZENSHIPSTATCODE;
+		HKIND = hKIND;
+		ORIGNAME = oRIGNAME;
+		CURRLONGNAME = cURRLONGNAME;
+		CURRSHORTNAME1 = cURRSHORTNAME1;
+		CURRSHORTNAME2 = cURRSHORTNAME2;
+		GMPCSHORTNAME1 = gMPCSHORTNAME1;
+		GMPCSHORTNAME2 = gMPCSHORTNAME2;
+		GMPCSHORTNAME3 = gMPCSHORTNAME3;
+		ADDRESS1 = aDDRESS1;
+		ADDRESS2 = aDDRESS2;
+		ADDRESS3 = aDDRESS3;
+		POSTCODE = pOSTCODE;
+		CITYCODE = cITYCODE;
+		STATECODE = sTATECODE;
+		JPNREMARKS1 = jPNREMARKS1;
+		JPNREMARKS2 = jPNREMARKS2;
+		IDTYPE = iDTYPE;
+		IDNO = iDNO;
+		BIRTHPLACE = bIRTHPLACE;
+		HSCCOLORCODE = hSCCOLORCODE;
+		RESTRICRESIDCODE = rESTRICRESIDCODE;
+		RJIND = rJIND;
+		COUNTRYOFORIGIN = cOUNTRYOFORIGIN;
+		APPNTREMARKS = aPPNTREMARKS;
+		SUPVRNOTES = sUPVRNOTES;
+		INVSERVICEFLAG = iNVSERVICEFLAG;
+		RESIDENTSTAT = rESIDENTSTAT;
+		PERSONSTATCODE = pERSONSTATCODE;
+		LASTADDCHANGEDATE = lASTADDCHANGEDATE;
+		AFISFLAG = aFISFLAG;
+		CARDLOSTCNT = cARDLOSTCNT;
+		LASTKPTISSUEDDATE = lASTKPTISSUEDDATE;
+		KPTAPPLSTAT = kPTAPPLSTAT;
+		KTINDCODE = kTINDCODE;
+		POLMILITARYJOINDATE = pOLMILITARYJOINDATE;
+		RETIREMENTDATE = rETIREMENTDATE;
+		ORIGNAMEIND = oRIGNAMEIND;
+		CITIZENNATIONCODE = cITIZENNATIONCODE;
+		APPLAPPROVALDATE = aPPLAPPROVALDATE;
+		GREENCARDEXPDATE = gREENCARDEXPDATE;
+		IMMREFNO = iMMREFNO;
+		IMMREFDATE = iMMREFDATE;
+		IMMEXPDATE = iMMEXPDATE;
+		PASSPORTNO = pASSPORTNO;
+		PASSPORTISSUEDDATE = pASSPORTISSUEDDATE;
+		PASSPORTISSUECOUNTRY = pASSPORTISSUECOUNTRY;
+		RJSTARTDATE = rJSTARTDATE;
+		RJENDDATE = rJENDDATE;
+		KTSTARTDATE = kTSTARTDATE;
+		KTENDDATE = kTENDDATE;
+		JKIND = jKIND;
+		BLKLSTCODE = bLKLSTCODE;
+		AFISBYPASS = aFISBYPASS;
+		PERMITNO = pERMITNO;
+		PERMITISSUEDATE = pERMITISSUEDATE;
+		PERMITTYPE = pERMITTYPE;
+		PRDOCTYPE = pRDOCTYPE;
+		LOSTCNTNEG = lOSTCNTNEG;
+		LOSTCNTCRIME = lOSTCNTCRIME;
+		LOSTCNTDIS = lOSTCNTDIS;
+		KTAREACODE = kTAREACODE;
+		APJAREACODE = aPJAREACODE;
+	}
+
+	public String getAPPLID() {
+		return APPLID;
+	}
+
+	public void setAPPLID(String aPPLID) {
+		APPLID = aPPLID;
+	}
+
+	public String getKPTNO() {
+		return KPTNO;
+	}
+
+	public void setKPTNO(String kPTNO) {
+		KPTNO = kPTNO;
+	}
+
+	public String getKPPNO() {
+		return KPPNO;
+	}
+
+	public void setKPPNO(String kPPNO) {
+		KPPNO = kPPNO;
+	}
+
+	public String getGENDER() {
+		return GENDER;
+	}
+
+	public void setGENDER(String gENDER) {
+		GENDER = gENDER;
+	}
+
+	public Date getBIRTHDATE() {
+		return BIRTHDATE;
+	}
+
+	public void setBIRTHDATE(Date bIRTHDATE) {
+		BIRTHDATE = bIRTHDATE;
+	}
+
+	public String getUNKNOWNBIRTHIND() {
+		return UNKNOWNBIRTHIND;
+	}
+
+	public void setUNKNOWNBIRTHIND(String uNKNOWNBIRTHIND) {
+		UNKNOWNBIRTHIND = uNKNOWNBIRTHIND;
+	}
+
+	public String getRELIGIONCODE() {
+		return RELIGIONCODE;
+	}
+
+	public void setRELIGIONCODE(String rELIGIONCODE) {
+		RELIGIONCODE = rELIGIONCODE;
+	}
+
+	public String getRACECODE() {
+		return RACECODE;
+	}
+
+	public void setRACECODE(String rACECODE) {
+		RACECODE = rACECODE;
+	}
+
+	public String getCITIZENSHIPSTATCODE() {
+		return CITIZENSHIPSTATCODE;
+	}
+
+	public void setCITIZENSHIPSTATCODE(String cITIZENSHIPSTATCODE) {
+		CITIZENSHIPSTATCODE = cITIZENSHIPSTATCODE;
+	}
+
+	public String getHKIND() {
+		return HKIND;
+	}
+
+	public void setHKIND(String hKIND) {
+		HKIND = hKIND;
+	}
+
+	public String getORIGNAME() {
+		return ORIGNAME;
+	}
+
+	public void setORIGNAME(String oRIGNAME) {
+		ORIGNAME = oRIGNAME;
+	}
+
+	public String getCURRLONGNAME() {
+		return CURRLONGNAME;
+	}
+
+	public void setCURRLONGNAME(String cURRLONGNAME) {
+		CURRLONGNAME = cURRLONGNAME;
+	}
+
+	public String getCURRSHORTNAME1() {
+		return CURRSHORTNAME1;
+	}
+
+	public void setCURRSHORTNAME1(String cURRSHORTNAME1) {
+		CURRSHORTNAME1 = cURRSHORTNAME1;
+	}
+
+	public String getCURRSHORTNAME2() {
+		return CURRSHORTNAME2;
+	}
+
+	public void setCURRSHORTNAME2(String cURRSHORTNAME2) {
+		CURRSHORTNAME2 = cURRSHORTNAME2;
+	}
+
+	public String getGMPCSHORTNAME1() {
+		return GMPCSHORTNAME1;
+	}
+
+	public void setGMPCSHORTNAME1(String gMPCSHORTNAME1) {
+		GMPCSHORTNAME1 = gMPCSHORTNAME1;
+	}
+
+	public String getGMPCSHORTNAME2() {
+		return GMPCSHORTNAME2;
+	}
+
+	public void setGMPCSHORTNAME2(String gMPCSHORTNAME2) {
+		GMPCSHORTNAME2 = gMPCSHORTNAME2;
+	}
+
+	public String getGMPCSHORTNAME3() {
+		return GMPCSHORTNAME3;
+	}
+
+	public void setGMPCSHORTNAME3(String gMPCSHORTNAME3) {
+		GMPCSHORTNAME3 = gMPCSHORTNAME3;
+	}
+
+	public String getADDRESS1() {
+		return ADDRESS1;
+	}
+
+	public void setADDRESS1(String aDDRESS1) {
+		ADDRESS1 = aDDRESS1;
+	}
+
+	public String getADDRESS2() {
+		return ADDRESS2;
+	}
+
+	public void setADDRESS2(String aDDRESS2) {
+		ADDRESS2 = aDDRESS2;
+	}
+
+	public String getADDRESS3() {
+		return ADDRESS3;
+	}
+
+	public void setADDRESS3(String aDDRESS3) {
+		ADDRESS3 = aDDRESS3;
+	}
+
+	public String getPOSTCODE() {
+		return POSTCODE;
+	}
+
+	public void setPOSTCODE(String pOSTCODE) {
+		POSTCODE = pOSTCODE;
+	}
+
+	public String getCITYCODE() {
+		return CITYCODE;
+	}
+
+	public void setCITYCODE(String cITYCODE) {
+		CITYCODE = cITYCODE;
+	}
+
+	public String getSTATECODE() {
+		return STATECODE;
+	}
+
+	public void setSTATECODE(String sTATECODE) {
+		STATECODE = sTATECODE;
+	}
+
+	public String getJPNREMARKS1() {
+		return JPNREMARKS1;
+	}
+
+	public void setJPNREMARKS1(String jPNREMARKS1) {
+		JPNREMARKS1 = jPNREMARKS1;
+	}
+
+	public String getJPNREMARKS2() {
+		return JPNREMARKS2;
+	}
+
+	public void setJPNREMARKS2(String jPNREMARKS2) {
+		JPNREMARKS2 = jPNREMARKS2;
+	}
+
+	public String getIDTYPE() {
+		return IDTYPE;
+	}
+
+	public void setIDTYPE(String iDTYPE) {
+		IDTYPE = iDTYPE;
+	}
+
+	public String getIDNO() {
+		return IDNO;
+	}
+
+	public void setIDNO(String iDNO) {
+		IDNO = iDNO;
+	}
+
+	public String getBIRTHPLACE() {
+		return BIRTHPLACE;
+	}
+
+	public void setBIRTHPLACE(String bIRTHPLACE) {
+		BIRTHPLACE = bIRTHPLACE;
+	}
+
+	public String getHSCCOLORCODE() {
+		return HSCCOLORCODE;
+	}
+
+	public void setHSCCOLORCODE(String hSCCOLORCODE) {
+		HSCCOLORCODE = hSCCOLORCODE;
+	}
+
+	public String getRESTRICRESIDCODE() {
+		return RESTRICRESIDCODE;
+	}
+
+	public void setRESTRICRESIDCODE(String rESTRICRESIDCODE) {
+		RESTRICRESIDCODE = rESTRICRESIDCODE;
+	}
+
+	public String getRJIND() {
+		return RJIND;
+	}
+
+	public void setRJIND(String rJIND) {
+		RJIND = rJIND;
+	}
+
+	public String getCOUNTRYOFORIGIN() {
+		return COUNTRYOFORIGIN;
+	}
+
+	public void setCOUNTRYOFORIGIN(String cOUNTRYOFORIGIN) {
+		COUNTRYOFORIGIN = cOUNTRYOFORIGIN;
+	}
+
+	public String getAPPNTREMARKS() {
+		return APPNTREMARKS;
+	}
+
+	public void setAPPNTREMARKS(String aPPNTREMARKS) {
+		APPNTREMARKS = aPPNTREMARKS;
+	}
+
+	public String getSUPVRNOTES() {
+		return SUPVRNOTES;
+	}
+
+	public void setSUPVRNOTES(String sUPVRNOTES) {
+		SUPVRNOTES = sUPVRNOTES;
+	}
+
+	public String getINVSERVICEFLAG() {
+		return INVSERVICEFLAG;
+	}
+
+	public void setINVSERVICEFLAG(String iNVSERVICEFLAG) {
+		INVSERVICEFLAG = iNVSERVICEFLAG;
+	}
+
+	public String getRESIDENTSTAT() {
+		return RESIDENTSTAT;
+	}
+
+	public void setRESIDENTSTAT(String rESIDENTSTAT) {
+		RESIDENTSTAT = rESIDENTSTAT;
+	}
+
+	public String getPERSONSTATCODE() {
+		return PERSONSTATCODE;
+	}
+
+	public void setPERSONSTATCODE(String pERSONSTATCODE) {
+		PERSONSTATCODE = pERSONSTATCODE;
+	}
+
+	public Date getLASTADDCHANGEDATE() {
+		return LASTADDCHANGEDATE;
+	}
+
+	public void setLASTADDCHANGEDATE(Date lASTADDCHANGEDATE) {
+		LASTADDCHANGEDATE = lASTADDCHANGEDATE;
+	}
+
+	public String getAFISFLAG() {
+		return AFISFLAG;
+	}
+
+	public void setAFISFLAG(String aFISFLAG) {
+		AFISFLAG = aFISFLAG;
+	}
+
+	public Integer getCARDLOSTCNT() {
+		return CARDLOSTCNT;
+	}
+
+	public void setCARDLOSTCNT(Integer cARDLOSTCNT) {
+		CARDLOSTCNT = cARDLOSTCNT;
+	}
+
+	public Date getLASTKPTISSUEDDATE() {
+		return LASTKPTISSUEDDATE;
+	}
+
+	public void setLASTKPTISSUEDDATE(Date lASTKPTISSUEDDATE) {
+		LASTKPTISSUEDDATE = lASTKPTISSUEDDATE;
+	}
+
+	public String getKPTAPPLSTAT() {
+		return KPTAPPLSTAT;
+	}
+
+	public void setKPTAPPLSTAT(String kPTAPPLSTAT) {
+		KPTAPPLSTAT = kPTAPPLSTAT;
+	}
+
+	public String getKTINDCODE() {
+		return KTINDCODE;
+	}
+
+	public void setKTINDCODE(String kTINDCODE) {
+		KTINDCODE = kTINDCODE;
+	}
+
+	public Date getPOLMILITARYJOINDATE() {
+		return POLMILITARYJOINDATE;
+	}
+
+	public void setPOLMILITARYJOINDATE(Date pOLMILITARYJOINDATE) {
+		POLMILITARYJOINDATE = pOLMILITARYJOINDATE;
+	}
+
+	public Date getRETIREMENTDATE() {
+		return RETIREMENTDATE;
+	}
+
+	public void setRETIREMENTDATE(Date rETIREMENTDATE) {
+		RETIREMENTDATE = rETIREMENTDATE;
+	}
+
+	public String getORIGNAMEIND() {
+		return ORIGNAMEIND;
+	}
+
+	public void setORIGNAMEIND(String oRIGNAMEIND) {
+		ORIGNAMEIND = oRIGNAMEIND;
+	}
+
+	public String getCITIZENNATIONCODE() {
+		return CITIZENNATIONCODE;
+	}
+
+	public void setCITIZENNATIONCODE(String cITIZENNATIONCODE) {
+		CITIZENNATIONCODE = cITIZENNATIONCODE;
+	}
+
+	public Date getAPPLAPPROVALDATE() {
+		return APPLAPPROVALDATE;
+	}
+
+	public void setAPPLAPPROVALDATE(Date aPPLAPPROVALDATE) {
+		APPLAPPROVALDATE = aPPLAPPROVALDATE;
+	}
+
+	public Date getGREENCARDEXPDATE() {
+		return GREENCARDEXPDATE;
+	}
+
+	public void setGREENCARDEXPDATE(Date gREENCARDEXPDATE) {
+		GREENCARDEXPDATE = gREENCARDEXPDATE;
+	}
+
+	public String getIMMREFNO() {
+		return IMMREFNO;
+	}
+
+	public void setIMMREFNO(String iMMREFNO) {
+		IMMREFNO = iMMREFNO;
+	}
+
+	public Date getIMMREFDATE() {
+		return IMMREFDATE;
+	}
+
+	public void setIMMREFDATE(Date iMMREFDATE) {
+		IMMREFDATE = iMMREFDATE;
+	}
+
+	public Date getIMMEXPDATE() {
+		return IMMEXPDATE;
+	}
+
+	public void setIMMEXPDATE(Date iMMEXPDATE) {
+		IMMEXPDATE = iMMEXPDATE;
+	}
+
+	public String getPASSPORTNO() {
+		return PASSPORTNO;
+	}
+
+	public void setPASSPORTNO(String pASSPORTNO) {
+		PASSPORTNO = pASSPORTNO;
+	}
+
+	public Date getPASSPORTISSUEDDATE() {
+		return PASSPORTISSUEDDATE;
+	}
+
+	public void setPASSPORTISSUEDDATE(Date pASSPORTISSUEDDATE) {
+		PASSPORTISSUEDDATE = pASSPORTISSUEDDATE;
+	}
+
+	public String getPASSPORTISSUECOUNTRY() {
+		return PASSPORTISSUECOUNTRY;
+	}
+
+	public void setPASSPORTISSUECOUNTRY(String pASSPORTISSUECOUNTRY) {
+		PASSPORTISSUECOUNTRY = pASSPORTISSUECOUNTRY;
+	}
+
+	public Date getRJSTARTDATE() {
+		return RJSTARTDATE;
+	}
+
+	public void setRJSTARTDATE(Date rJSTARTDATE) {
+		RJSTARTDATE = rJSTARTDATE;
+	}
+
+	public Date getRJENDDATE() {
+		return RJENDDATE;
+	}
+
+	public void setRJENDDATE(Date rJENDDATE) {
+		RJENDDATE = rJENDDATE;
+	}
+
+	public Date getKTSTARTDATE() {
+		return KTSTARTDATE;
+	}
+
+	public void setKTSTARTDATE(Date kTSTARTDATE) {
+		KTSTARTDATE = kTSTARTDATE;
+	}
+
+	public Date getKTENDDATE() {
+		return KTENDDATE;
+	}
+
+	public void setKTENDDATE(Date kTENDDATE) {
+		KTENDDATE = kTENDDATE;
+	}
+
+	public String getJKIND() {
+		return JKIND;
+	}
+
+	public void setJKIND(String jKIND) {
+		JKIND = jKIND;
+	}
+
+	public String getBLKLSTCODE() {
+		return BLKLSTCODE;
+	}
+
+	public void setBLKLSTCODE(String bLKLSTCODE) {
+		BLKLSTCODE = bLKLSTCODE;
+	}
+
+	public String getAFISBYPASS() {
+		return AFISBYPASS;
+	}
+
+	public void setAFISBYPASS(String aFISBYPASS) {
+		AFISBYPASS = aFISBYPASS;
+	}
+
+	public String getPERMITNO() {
+		return PERMITNO;
+	}
+
+	public void setPERMITNO(String pERMITNO) {
+		PERMITNO = pERMITNO;
+	}
+
+	public Date getPERMITISSUEDATE() {
+		return PERMITISSUEDATE;
+	}
+
+	public void setPERMITISSUEDATE(Date pERMITISSUEDATE) {
+		PERMITISSUEDATE = pERMITISSUEDATE;
+	}
+
+	public Integer getPERMITTYPE() {
+		return PERMITTYPE;
+	}
+
+	public void setPERMITTYPE(Integer pERMITTYPE) {
+		PERMITTYPE = pERMITTYPE;
+	}
+
+	public Integer getPRDOCTYPE() {
+		return PRDOCTYPE;
+	}
+
+	public void setPRDOCTYPE(Integer pRDOCTYPE) {
+		PRDOCTYPE = pRDOCTYPE;
+	}
+
+	public Integer getLOSTCNTNEG() {
+		return LOSTCNTNEG;
+	}
+
+	public void setLOSTCNTNEG(Integer lOSTCNTNEG) {
+		LOSTCNTNEG = lOSTCNTNEG;
+	}
+
+	public Integer getLOSTCNTCRIME() {
+		return LOSTCNTCRIME;
+	}
+
+	public void setLOSTCNTCRIME(Integer lOSTCNTCRIME) {
+		LOSTCNTCRIME = lOSTCNTCRIME;
+	}
+
+	public Integer getLOSTCNTDIS() {
+		return LOSTCNTDIS;
+	}
+
+	public void setLOSTCNTDIS(Integer lOSTCNTDIS) {
+		LOSTCNTDIS = lOSTCNTDIS;
+	}
+
+	public String getKTAREACODE() {
+		return KTAREACODE;
+	}
+
+	public void setKTAREACODE(String kTAREACODE) {
+		KTAREACODE = kTAREACODE;
+	}
+
+	public String getAPJAREACODE() {
+		return APJAREACODE;
+	}
+
+	public void setAPJAREACODE(String aPJAREACODE) {
+		APJAREACODE = aPJAREACODE;
+	}
+
+	@Override
+	public String toString() {
+		return "APPNT_JPN_INFO [APPLID=" + APPLID + ", KPTNO=" + KPTNO + ", KPPNO=" + KPPNO + ", GENDER=" + GENDER
+				+ ", BIRTHDATE=" + BIRTHDATE + ", UNKNOWNBIRTHIND=" + UNKNOWNBIRTHIND + ", RELIGIONCODE=" + RELIGIONCODE
+				+ ", RACECODE=" + RACECODE + ", CITIZENSHIPSTATCODE=" + CITIZENSHIPSTATCODE + ", HKIND=" + HKIND
+				+ ", ORIGNAME=" + ORIGNAME + ", CURRLONGNAME=" + CURRLONGNAME + ", CURRSHORTNAME1=" + CURRSHORTNAME1
+				+ ", CURRSHORTNAME2=" + CURRSHORTNAME2 + ", GMPCSHORTNAME1=" + GMPCSHORTNAME1 + ", GMPCSHORTNAME2="
+				+ GMPCSHORTNAME2 + ", GMPCSHORTNAME3=" + GMPCSHORTNAME3 + ", ADDRESS1=" + ADDRESS1 + ", ADDRESS2="
+				+ ADDRESS2 + ", ADDRESS3=" + ADDRESS3 + ", POSTCODE=" + POSTCODE + ", CITYCODE=" + CITYCODE
+				+ ", STATECODE=" + STATECODE + ", JPNREMARKS1=" + JPNREMARKS1 + ", JPNREMARKS2=" + JPNREMARKS2
+				+ ", IDTYPE=" + IDTYPE + ", IDNO=" + IDNO + ", BIRTHPLACE=" + BIRTHPLACE + ", HSCCOLORCODE="
+				+ HSCCOLORCODE + ", RESTRICRESIDCODE=" + RESTRICRESIDCODE + ", RJIND=" + RJIND + ", COUNTRYOFORIGIN="
+				+ COUNTRYOFORIGIN + ", APPNTREMARKS=" + APPNTREMARKS + ", SUPVRNOTES=" + SUPVRNOTES
+				+ ", INVSERVICEFLAG=" + INVSERVICEFLAG + ", RESIDENTSTAT=" + RESIDENTSTAT + ", PERSONSTATCODE="
+				+ PERSONSTATCODE + ", LASTADDCHANGEDATE=" + LASTADDCHANGEDATE + ", AFISFLAG=" + AFISFLAG
+				+ ", CARDLOSTCNT=" + CARDLOSTCNT + ", LASTKPTISSUEDDATE=" + LASTKPTISSUEDDATE + ", KPTAPPLSTAT="
+				+ KPTAPPLSTAT + ", KTINDCODE=" + KTINDCODE + ", POLMILITARYJOINDATE=" + POLMILITARYJOINDATE
+				+ ", RETIREMENTDATE=" + RETIREMENTDATE + ", ORIGNAMEIND=" + ORIGNAMEIND + ", CITIZENNATIONCODE="
+				+ CITIZENNATIONCODE + ", APPLAPPROVALDATE=" + APPLAPPROVALDATE + ", GREENCARDEXPDATE="
+				+ GREENCARDEXPDATE + ", IMMREFNO=" + IMMREFNO + ", IMMREFDATE=" + IMMREFDATE + ", IMMEXPDATE="
+				+ IMMEXPDATE + ", PASSPORTNO=" + PASSPORTNO + ", PASSPORTISSUEDDATE=" + PASSPORTISSUEDDATE
+				+ ", PASSPORTISSUECOUNTRY=" + PASSPORTISSUECOUNTRY + ", RJSTARTDATE=" + RJSTARTDATE + ", RJENDDATE="
+				+ RJENDDATE + ", KTSTARTDATE=" + KTSTARTDATE + ", KTENDDATE=" + KTENDDATE + ", JKIND=" + JKIND
+				+ ", BLKLSTCODE=" + BLKLSTCODE + ", AFISBYPASS=" + AFISBYPASS + ", PERMITNO=" + PERMITNO
+				+ ", PERMITISSUEDATE=" + PERMITISSUEDATE + ", PERMITTYPE=" + PERMITTYPE + ", PRDOCTYPE=" + PRDOCTYPE
+				+ ", LOSTCNTNEG=" + LOSTCNTNEG + ", LOSTCNTCRIME=" + LOSTCNTCRIME + ", LOSTCNTDIS=" + LOSTCNTDIS
+				+ ", KTAREACODE=" + KTAREACODE + ", APJAREACODE=" + APJAREACODE + "]";
+	}
+	
+	
+	
+	
+}

@@ -1,0 +1,294 @@
+package com.htp.skp.db2.entity;
+
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class THEI_EXTRACT_ICSC {
+	
+	@Id
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private String HEI_APPL_LEGAPPLID;
+	
+	private String HEI_APPL_KPTNO;
+	private String HEI_APPL_APPLSTAT;
+	private String HEI_APPL_DATE;
+	private String HEI_APPL_USERID;
+	private Integer HEI_APPL_COLLCTR;
+	private String HEI_APPL_COLLKPTNO;
+	private String HEI_APPL_IDTYPE;
+	private String HEI_APPL_RLTNCD;
+	private Integer HEI_APPLFR_FEEAMT;
+	private String HEI_APPLFR_RTYPE;
+	private Integer HEI_APPLTF_FEEAMT;
+	private String HEI_APPLTXN_TXNCD;
+	private String HEI_APPLTXN_LICCLASS;
+	private Integer HEI_CS_CARDVERNO;
+	private String HEI_CS_USERID;
+	private String HEI_APPLHIS_USERID;
+	private Integer HEI_AJI_LCCRIME;
+	private Integer HEI_AJI_LCTDIS;
+	private Integer HEI_AJI_LCNEG;
+	private Integer HEI_AJI_CLCNT;
+	private String HEI_CREATE_DT;
+	private String HEI_RV_IND;
+	private String HEI_PR_ACTRMK1;
+	private String HEI_PR_ACTRMK2;
+	
+	public THEI_EXTRACT_ICSC() {
+	}
+	
+
+	public THEI_EXTRACT_ICSC(String hEI_APPL_LEGAPPLID, String hEI_APPL_KPTNO, String hEI_APPL_APPLSTAT, String hEI_APPL_DATE,
+			String hEI_APPL_USERID, Integer hEI_APPL_COLLCTR, String hEI_APPL_COLLKPTNO, String hEI_APPL_IDTYPE,
+			String hEI_APPL_RLTNCD, Integer hEI_APPLFR_FEEAMT, String hEI_APPLFR_RTYPE, Integer hEI_APPLTF_FEEAMT,
+			String hEI_APPLTXN_TXNCD, String hEI_APPLTXN_LICCLASS, Integer hEI_CS_CARDVERNO, String hEI_CS_USERID,
+			String hEI_APPLHIS_USERID, Integer hEI_AJI_LCCRIME, Integer hEI_AJI_LCTDIS, Integer hEI_AJI_LCNEG,
+			Integer hEI_AJI_CLCNT, String hEI_CREATE_DT,String hEI_RV_IND, String hEI_PR_ACTRMK1, String hEI_PR_ACTRMK2) {
+		super();
+		HEI_APPL_LEGAPPLID = hEI_APPL_LEGAPPLID;
+		HEI_APPL_KPTNO = hEI_APPL_KPTNO;
+		HEI_APPL_APPLSTAT = hEI_APPL_APPLSTAT;
+		HEI_APPL_DATE = hEI_APPL_DATE;
+		HEI_APPL_USERID = hEI_APPL_USERID;
+		HEI_APPL_COLLCTR = hEI_APPL_COLLCTR;
+		HEI_APPL_COLLKPTNO = hEI_APPL_COLLKPTNO;
+		HEI_APPL_IDTYPE = hEI_APPL_IDTYPE;
+		HEI_APPL_RLTNCD = hEI_APPL_RLTNCD;
+		HEI_APPLFR_FEEAMT = hEI_APPLFR_FEEAMT;
+		HEI_APPLFR_RTYPE = hEI_APPLFR_RTYPE;
+		HEI_APPLTF_FEEAMT = hEI_APPLTF_FEEAMT;
+		HEI_APPLTXN_TXNCD = hEI_APPLTXN_TXNCD;
+		HEI_APPLTXN_LICCLASS = hEI_APPLTXN_LICCLASS;
+		HEI_CS_CARDVERNO = hEI_CS_CARDVERNO;
+		HEI_CS_USERID = hEI_CS_USERID;
+		HEI_APPLHIS_USERID = hEI_APPLHIS_USERID;
+		HEI_AJI_LCCRIME = hEI_AJI_LCCRIME;
+		HEI_AJI_LCTDIS = hEI_AJI_LCTDIS;
+		HEI_AJI_LCNEG = hEI_AJI_LCNEG;
+		HEI_AJI_CLCNT = hEI_AJI_CLCNT;
+		HEI_CREATE_DT = hEI_CREATE_DT;
+		HEI_RV_IND = hEI_RV_IND;
+		HEI_PR_ACTRMK1 = hEI_PR_ACTRMK1;
+		HEI_PR_ACTRMK2 = hEI_PR_ACTRMK2;
+	}
+
+
+	public String getHEI_APPL_LEGAPPLID() {
+		return HEI_APPL_LEGAPPLID;
+	}
+
+	public void setHEI_APPL_LEGAPPLID(String hEI_APPL_LEGAPPLID) {
+		HEI_APPL_LEGAPPLID = hEI_APPL_LEGAPPLID;
+	}
+
+	public String getHEI_APPL_KPTNO() {
+		return HEI_APPL_KPTNO;
+	}
+
+	public void setHEI_APPL_KPTNO(String hEI_APPL_KPTNO) {
+		HEI_APPL_KPTNO = hEI_APPL_KPTNO;
+	}
+
+	public String getHEI_APPL_APPLSTAT() {
+		return HEI_APPL_APPLSTAT;
+	}
+
+	public void setHEI_APPL_APPLSTAT(String hEI_APPL_APPLSTAT) {
+		HEI_APPL_APPLSTAT = hEI_APPL_APPLSTAT;
+	}
+
+	public String getHEI_APPL_DATE() {
+		return HEI_APPL_DATE;
+	}
+
+	public void setHEI_APPL_DATE(String hEI_APPL_DATE) {
+		HEI_APPL_DATE = hEI_APPL_DATE;
+	}
+
+	public String getHEI_APPL_USERID() {
+		return HEI_APPL_USERID;
+	}
+
+	public void setHEI_APPL_USERID(String hEI_APPL_USERID) {
+		HEI_APPL_USERID = hEI_APPL_USERID;
+	}
+
+	public Integer getHEI_APPL_COLLCTR() {
+		return HEI_APPL_COLLCTR;
+	}
+
+	public void setHEI_APPL_COLLCTR(Integer hEI_APPL_COLLCTR) {
+		HEI_APPL_COLLCTR = hEI_APPL_COLLCTR;
+	}
+
+	public String getHEI_APPL_COLLKPTNO() {
+		return HEI_APPL_COLLKPTNO;
+	}
+
+	public void setHEI_APPL_COLLKPTNO(String hEI_APPL_COLLKPTNO) {
+		HEI_APPL_COLLKPTNO = hEI_APPL_COLLKPTNO;
+	}
+
+	public String getHEI_APPL_IDTYPE() {
+		return HEI_APPL_IDTYPE;
+	}
+
+	public void setHEI_APPL_IDTYPE(String hEI_APPL_IDTYPE) {
+		HEI_APPL_IDTYPE = hEI_APPL_IDTYPE;
+	}
+
+	public String getHEI_APPL_RLTNCD() {
+		return HEI_APPL_RLTNCD;
+	}
+
+	public void setHEI_APPL_RLTNCD(String hEI_APPL_RLTNCD) {
+		HEI_APPL_RLTNCD = hEI_APPL_RLTNCD;
+	}
+
+	public Integer getHEI_APPLFR_FEEAMT() {
+		return HEI_APPLFR_FEEAMT;
+	}
+
+	public void setHEI_APPLFR_FEEAMT(Integer hEI_APPLFR_FEEAMT) {
+		HEI_APPLFR_FEEAMT = hEI_APPLFR_FEEAMT;
+	}
+
+	public String getHEI_APPLFR_RTYPE() {
+		return HEI_APPLFR_RTYPE;
+	}
+
+	public void setHEI_APPLFR_RTYPE(String hEI_APPLFR_RTYPE) {
+		HEI_APPLFR_RTYPE = hEI_APPLFR_RTYPE;
+	}
+
+	public Integer getHEI_APPLTF_FEEAMT() {
+		return HEI_APPLTF_FEEAMT;
+	}
+
+	public void setHEI_APPLTF_FEEAMT(Integer hEI_APPLTF_FEEAMT) {
+		HEI_APPLTF_FEEAMT = hEI_APPLTF_FEEAMT;
+	}
+
+	public String getHEI_APPLTXN_TXNCD() {
+		return HEI_APPLTXN_TXNCD;
+	}
+
+	public void setHEI_APPLTXN_TXNCD(String hEI_APPLTXN_TXNCD) {
+		HEI_APPLTXN_TXNCD = hEI_APPLTXN_TXNCD;
+	}
+
+	public String getHEI_APPLTXN_LICCLASS() {
+		return HEI_APPLTXN_LICCLASS;
+	}
+
+	public void setHEI_APPLTXN_LICCLASS(String hEI_APPLTXN_LICCLASS) {
+		HEI_APPLTXN_LICCLASS = hEI_APPLTXN_LICCLASS;
+	}
+
+	public Integer getHEI_CS_CARDVERNO() {
+		return HEI_CS_CARDVERNO;
+	}
+
+	public void setHEI_CS_CARDVERNO(Integer hEI_CS_CARDVERNO) {
+		HEI_CS_CARDVERNO = hEI_CS_CARDVERNO;
+	}
+
+	public String getHEI_CS_USERID() {
+		return HEI_CS_USERID;
+	}
+
+	public void setHEI_CS_USERID(String hEI_CS_USERID) {
+		HEI_CS_USERID = hEI_CS_USERID;
+	}
+
+	public String getHEI_APPLHIS_USERID() {
+		return HEI_APPLHIS_USERID;
+	}
+
+	public void setHEI_APPLHIS_USERID(String hEI_APPLHIS_USERID) {
+		HEI_APPLHIS_USERID = hEI_APPLHIS_USERID;
+	}
+
+	public Integer getHEI_AJI_LCCRIME() {
+		return HEI_AJI_LCCRIME;
+	}
+
+	public void setHEI_AJI_LCCRIME(Integer hEI_AJI_LCCRIME) {
+		HEI_AJI_LCCRIME = hEI_AJI_LCCRIME;
+	}
+
+	public Integer getHEI_AJI_LCTDIS() {
+		return HEI_AJI_LCTDIS;
+	}
+
+	public void setHEI_AJI_LCTDIS(Integer hEI_AJI_LCTDIS) {
+		HEI_AJI_LCTDIS = hEI_AJI_LCTDIS;
+	}
+
+	public Integer getHEI_AJI_LCNEG() {
+		return HEI_AJI_LCNEG;
+	}
+
+	public void setHEI_AJI_LCNEG(Integer hEI_AJI_LCNEG) {
+		HEI_AJI_LCNEG = hEI_AJI_LCNEG;
+	}
+
+	public Integer getHEI_AJI_CLCNT() {
+		return HEI_AJI_CLCNT;
+	}
+
+	public void setHEI_AJI_CLCNT(Integer hEI_AJI_CLCNT) {
+		HEI_AJI_CLCNT = hEI_AJI_CLCNT;
+	}
+
+	public String getHEI_CREATE_DT() {
+		return HEI_CREATE_DT;
+	}
+
+	public void setHEI_CREATE_DT(String hEI_CREATE_DT) {
+		HEI_CREATE_DT = hEI_CREATE_DT;
+	}
+
+	public String getHEI_RV_IND() {
+		return HEI_RV_IND;
+	}
+
+
+	public void setHEI_RV_IND(String hEI_RV_IND) {
+		HEI_RV_IND = hEI_RV_IND;
+	}
+	public String getHEI_PR_ACTRMK1() {
+		return HEI_PR_ACTRMK1;
+	}
+
+	public void setHEI_PR_ACTRMK1(String hEI_PR_ACTRMK1) {
+		HEI_PR_ACTRMK1 = hEI_PR_ACTRMK1;
+	}
+
+	public String getHEI_PR_ACTRMK2() {
+		return HEI_PR_ACTRMK2;
+	}
+
+	public void setHEI_PR_ACTRMK2(String hEI_PR_ACTRMK2) {
+		HEI_PR_ACTRMK2 = hEI_PR_ACTRMK2;
+	}
+
+	@Override
+	public String toString() {
+		return "APPL_FEE_REDUCTION [HEI_APPL_LEGAPPLID=" + HEI_APPL_LEGAPPLID + ", HEI_APPL_KPTNO=" + HEI_APPL_KPTNO
+				+ ", HEI_APPL_APPLSTAT=" + HEI_APPL_APPLSTAT + ", HEI_APPL_DATE=" + HEI_APPL_DATE + ", HEI_APPL_USERID="
+				+ HEI_APPL_USERID + ", HEI_APPL_COLLCTR=" + HEI_APPL_COLLCTR + ", HEI_APPL_COLLKPTNO="
+				+ HEI_APPL_COLLKPTNO + ", HEI_APPL_IDTYPE=" + HEI_APPL_IDTYPE + ", HEI_APPL_RLTNCD=" + HEI_APPL_RLTNCD
+				+ ", HEI_APPLFR_FEEAMT=" + HEI_APPLFR_FEEAMT + ", HEI_APPLFR_RTYPE=" + HEI_APPLFR_RTYPE
+				+ ", HEI_APPLTF_FEEAMT=" + HEI_APPLTF_FEEAMT + ", HEI_APPLTXN_TXNCD=" + HEI_APPLTXN_TXNCD
+				+ ", HEI_APPLTXN_LICCLASS=" + HEI_APPLTXN_LICCLASS + ", HEI_CS_CARDVERNO=" + HEI_CS_CARDVERNO
+				+ ", HEI_CS_USERID=" + HEI_CS_USERID + ", HEI_APPLHIS_USERID=" + HEI_APPLHIS_USERID
+				+ ", HEI_AJI_LCCRIME=" + HEI_AJI_LCCRIME + ", HEI_AJI_LCTDIS=" + HEI_AJI_LCTDIS + ", HEI_AJI_LCNEG="
+				+ HEI_AJI_LCNEG + ", HEI_AJI_CLCNT=" + HEI_AJI_CLCNT + ", HEI_CREATE_DT=" + HEI_CREATE_DT
+				+ ", HEI_RV_IND=" + HEI_RV_IND
+				+ ", HEI_PR_ACTRMK1=" + HEI_PR_ACTRMK1 + ", HEI_PR_ACTRMK2=" + HEI_PR_ACTRMK2 + "]";
+	}
+	
+}
