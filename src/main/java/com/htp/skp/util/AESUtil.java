@@ -21,7 +21,7 @@ public class AESUtil {
     SecretKey key;
     
     public AESUtil() throws Exception {
-        myEncryptionKey = "ThisIsSpartaThisIsSparta";
+        myEncryptionKey = "ThisIsSpartaThisIsSparta"; //24 bytes size
         myEncryptionScheme = DESEDE_ENCRYPTION_SCHEME;
         arrayBytes = myEncryptionKey.getBytes(UNICODE_FORMAT);
         ks = new DESedeKeySpec(arrayBytes);
