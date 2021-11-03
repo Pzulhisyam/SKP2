@@ -120,7 +120,7 @@ public class SkpFacade {
 		String startDate = CommonUtil.getDate("startDate");
 		String endDate = CommonUtil.getDate("endDate");
 //		String startDate = "2021/08/01";
-//		String endDate = "2021/08/07";
+//		String endDate = "2021/08/07"; for data testing
 		List<APPLICATION> list = appRepository.findAllRecord(startDate, endDate);
 
 		if (list.size() != 0) {

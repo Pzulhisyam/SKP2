@@ -7,6 +7,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import javax.crypto.BadPaddingException;
@@ -77,7 +78,7 @@ public class Skp20Application implements CommandLineRunner {
 		log.info("STARTING THE APPLICATION");
 //		Skp20Application skp = new Skp20Application();
 //		if(skp.authentication()) {
-			SpringApplication.run(Skp20Application.class, args);
+		SpringApplication.run(Skp20Application.class, args);
 //		}
 		log.info("APPLICATION FINISHED");
 	}
