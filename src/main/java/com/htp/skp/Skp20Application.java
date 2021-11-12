@@ -88,8 +88,6 @@ public class Skp20Application implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 		log.info("EXECUTING : command line runner");
 		SkpFacade sf = new SkpFacade(insertRepoToMap());
-//		String currentUser = CommonUtil.getCurrentUser();
-//		CommonUtil.printOut(currentUser);
 		sf.insertData();
 	}
 	

@@ -119,8 +119,8 @@ public class SkpFacade {
 
 		String startDate = CommonUtil.getDate("startDate");
 		String endDate = CommonUtil.getDate("endDate");
-//		String startDate = "2021/08/01";
-//		String endDate = "2021/08/07"; for data testing
+//		String startDate = "2021/11/10";
+//		String endDate = "2021/11/10"; //for data testing
 		List<APPLICATION> list = appRepository.findAllRecord(startDate, endDate);
 
 		if (list.size() != 0) {
@@ -129,7 +129,7 @@ public class SkpFacade {
 					APPLICATION app = list.get(i);
 					THEI_EXTRACT_ICSC icsc = insertICSCBean(app);
 					iscsRepository.save(icsc);
-					icscList.add(icsc);
+				    icscList.add(icsc);
 				} else {
 					log.info("no beds found");
 				}

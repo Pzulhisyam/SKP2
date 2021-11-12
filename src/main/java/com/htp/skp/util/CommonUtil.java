@@ -49,10 +49,10 @@ public class CommonUtil {
 			if (remarks1) {
 				str = remarksVal.substring(0, 59);
 			} else {
-				if (remarksVal.length() <= 160) {
+				if (remarksVal.length() <= 120) {
 					str = remarksVal.substring(59, remarksVal.length());
 				} else {
-					str = remarksVal.substring(59, 160);
+					str = remarksVal.substring(59, 119);
 				}
 			}
 		}
