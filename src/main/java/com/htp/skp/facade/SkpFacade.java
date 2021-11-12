@@ -129,7 +129,7 @@ public class SkpFacade {
 					APPLICATION app = list.get(i);
 					THEI_EXTRACT_ICSC icsc = insertICSCBean(app);
 					iscsRepository.save(icsc);
-				    icscList.add(icsc);
+				    icscList.add(icsc); //for excell
 				} else {
 					log.info("no beds found");
 				}
