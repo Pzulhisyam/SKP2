@@ -50,14 +50,26 @@ public class CommonUtil {
 				str = remarksVal.substring(0, 59);
 			} else {
 				if (remarksVal.length() <= 120) {
-					str = remarksVal.substring(59, remarksVal.length());
+					str = remarksVal.substring(59, remarksVal.length()-1);
 				} else {
-					str = remarksVal.substring(59, 119);
+					str = remarksVal.substring(59, 118);
 				}
 			}
 		}
+		
 
 		return str;
+	}
+	
+	public static Boolean checkLength(APPLICATION app, THEI_EXTRACT_ICSC icsc, String remarksVal) {
+		if(remarksVal.length() > 60) {
+			String appid= app.getAPPLID();
+			String icscid = icsc.getHEI_APPL_LEGAPPLID();
+			printOut(" APPID : "+appid+" HEI_APPL_LEGAPPLID : "+icscid+" HEI_PR_ACTRMK1 : "+remarksVal+" length : "+remarksVal.length());
+			return false;
+		}else {
+			return true;
+		}
 	}
 
 	public static String getDate(String temp) {

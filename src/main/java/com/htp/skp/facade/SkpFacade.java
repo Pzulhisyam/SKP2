@@ -8,7 +8,6 @@ import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import com.htp.skp.Skp20Application;
 import com.htp.skp.constant.Constant;
@@ -86,6 +85,7 @@ public class SkpFacade {
 		}
 	}
 
+	@SuppressWarnings("unused")
 	private boolean authentication() {
 		try {
 			return CommonUtil.configAuthentication();
@@ -95,6 +95,7 @@ public class SkpFacade {
 		return false;
 	}
 
+	@SuppressWarnings("unused")
 	private void encryptdecryptVal() {
 		AESUtil td;
 		try {
@@ -112,6 +113,42 @@ public class SkpFacade {
 		}
 	}
 
+	public void insertDataTemp() {
+		long extractStartTime = System.currentTimeMillis();
+
+		List<THEI_EXTRACT_ICSC> icscList = new ArrayList<THEI_EXTRACT_ICSC>();
+
+//		String startDate = CommonUtil.getDate("startDate");
+//		String endDate = CommonUtil.getDate("endDate");
+		String startDate = "2021/08/01";
+		String endDate = "2021/08/06"; //for data testing
+		List<APPLICATION> list = appRepository.findRecordById(startDate, endDate,"2021011002100901003");
+
+		if (list.size() != 0) {
+			for (int i = 0; i < list.size(); i++) {
+				if (list.get(i) != null) {
+					APPLICATION app = list.get(i);
+					THEI_EXTRACT_ICSC icsc = insertICSCBean(app);
+					iscsRepository.save(icsc);
+				    icscList.add(icsc); //for excell
+				} else {
+					log.info("no beds found");
+				}
+			}
+		}
+
+		long extractStopTime = System.currentTimeMillis();
+		float extractRunTime = extractStopTime - extractStartTime;
+		float result = extractRunTime / 1000;
+		CommonUtil.printOut("Run time: " + result);
+//		try {
+//			CommonUtil.generateJsonObjExcel(icscList);
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
+	
+		
+	}
 	public void insertData() {
 		long extractStartTime = System.currentTimeMillis();
 
@@ -119,8 +156,8 @@ public class SkpFacade {
 
 		String startDate = CommonUtil.getDate("startDate");
 		String endDate = CommonUtil.getDate("endDate");
-//		String startDate = "2021/11/10";
-//		String endDate = "2021/11/10"; //for data testing
+//		String startDate = "2021/08/01";
+//		String endDate = "2021/08/06"; //for data testing
 		List<APPLICATION> list = appRepository.findAllRecord(startDate, endDate);
 
 		if (list.size() != 0) {
@@ -191,10 +228,20 @@ public class SkpFacade {
 				&& record.getACTREMARKS().length() <= 60) {
 			icsc.setHEI_PR_ACTRMK1(record.getACTREMARKS());
 			icsc.setHEI_PR_ACTRMK2("");
+			if(icsc.getHEI_PR_ACTRMK1().length() > 60) { //for checking
+				CommonUtil.printOut(CommonUtil.checkLength(app, icsc, icsc.getHEI_PR_ACTRMK1()));
+			}
+
 		} else {
 			icsc.setHEI_PR_ACTRMK1(CommonUtil.devideRemarks(record.getACTREMARKS(), true));
 			icsc.setHEI_PR_ACTRMK2(CommonUtil.devideRemarks(record.getACTREMARKS(), false));
 
+			if(icsc.getHEI_PR_ACTRMK1().length() > 60) {
+				CommonUtil.printOut(CommonUtil.checkLength(app, icsc, icsc.getHEI_PR_ACTRMK1()));
+			}
+			if(icsc.getHEI_PR_ACTRMK2().length() > 60) {
+				CommonUtil.printOut(CommonUtil.checkLength(app, icsc, icsc.getHEI_PR_ACTRMK2()));
+			}
 		}
 
 		return icsc;
@@ -308,11 +355,16 @@ public class SkpFacade {
 	private Integer findBranchInfo(APPLICATION app) {
 		Integer temp = 0;
 		BRANCH_INFO branch = new BRANCH_INFO();
-		Optional<BRANCH_INFO> opt = branchRepository.findById(app.getCOLLCENTER().toString());
+		String tempStr = app.getCOLLCENTER().toString();
+		if(tempStr.length() == 5 && tempStr.substring(0, 1).equalsIgnoreCase("0")) {
+			tempStr = "0"+tempStr;
+		}
+		Optional<BRANCH_INFO> opt = branchRepository.findById(tempStr);
 		if (opt.isPresent() && opt.get() instanceof BRANCH_INFO) {
 			branch = new BRANCH_INFO();
 			branch = opt.get();
 			temp = Integer.parseInt(branch.getBRANCHCODEJPN());
+//			CommonUtil.printOut(branch.getBRANCHCODEJPN());
 		}
 		return temp;
 	}
