@@ -49,7 +49,7 @@ public class SkpFacade {
 	private BranchInfoRepository branchRepository;
 
 	public SkpFacade(HashMap<String, Object> map) {
-
+		//test mapping by syafiza
 		if (map != null) {
 			mainMap = map;
 			if (mainMap.get("iscs") instanceof ExtractICSCRepository) {
@@ -154,10 +154,10 @@ public class SkpFacade {
 
 		List<THEI_EXTRACT_ICSC> icscList = new ArrayList<THEI_EXTRACT_ICSC>();
 
-		String startDate = CommonUtil.getDate("startDate");
-		String endDate = CommonUtil.getDate("endDate");
-//		String startDate = "2021/08/01";
-//		String endDate = "2021/08/06"; //for data testing
+//		String startDate = CommonUtil.getDate("startDate");
+//		String endDate = CommonUtil.getDate("endDate");
+		String startDate = "2021/08/01";
+		String endDate = "2021/08/06"; //for data testing
 		List<APPLICATION> list = appRepository.findAllRecord(startDate, endDate);
 
 		if (list.size() != 0) {
@@ -228,20 +228,20 @@ public class SkpFacade {
 				&& record.getACTREMARKS().length() <= 60) {
 			icsc.setHEI_PR_ACTRMK1(record.getACTREMARKS());
 			icsc.setHEI_PR_ACTRMK2("");
-			if(icsc.getHEI_PR_ACTRMK1().length() > 60) { //for checking
-				CommonUtil.printOut(CommonUtil.checkLength(app, icsc, icsc.getHEI_PR_ACTRMK1()));
-			}
+//			if(icsc.getHEI_PR_ACTRMK1().length() > 60) { //for checking
+//				CommonUtil.printOut(CommonUtil.checkLength(app, icsc, icsc.getHEI_PR_ACTRMK1()));
+//			}
 
 		} else {
 			icsc.setHEI_PR_ACTRMK1(CommonUtil.devideRemarks(record.getACTREMARKS(), true));
 			icsc.setHEI_PR_ACTRMK2(CommonUtil.devideRemarks(record.getACTREMARKS(), false));
 
-			if(icsc.getHEI_PR_ACTRMK1().length() > 60) {
-				CommonUtil.printOut(CommonUtil.checkLength(app, icsc, icsc.getHEI_PR_ACTRMK1()));
-			}
-			if(icsc.getHEI_PR_ACTRMK2().length() > 60) {
-				CommonUtil.printOut(CommonUtil.checkLength(app, icsc, icsc.getHEI_PR_ACTRMK2()));
-			}
+//			if(icsc.getHEI_PR_ACTRMK1().length() > 60) {
+//				CommonUtil.printOut(CommonUtil.checkLength(app, icsc, icsc.getHEI_PR_ACTRMK1()));
+//			}
+//			if(icsc.getHEI_PR_ACTRMK2().length() > 60) {
+//				CommonUtil.printOut(CommonUtil.checkLength(app, icsc, icsc.getHEI_PR_ACTRMK2()));
+//			}
 		}
 
 		return icsc;
