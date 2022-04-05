@@ -34,7 +34,7 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
-import com.htp.skp.Skp20Application;
+import com.htp.skp.Skp21Application;
 import com.htp.skp.constant.Constant;
 import com.htp.skp.db2.entity.THEI_EXTRACT_ICSC;
 import com.htp.skp.oracle.entity.APPLICATION;
@@ -278,6 +278,7 @@ public class CommonUtil {
 			XSSFWorkbook workbook = new XSSFWorkbook();
 			XSSFSheet sheet = workbook.createSheet("ICSC Data");
 
+//			workbook.getSheetAt(0).getRow(1).getCell(3).setCellValue("Jumlah rekod : " + icscListTemp.size());
 			List<String> l1 = new ArrayList<String>();
 			List<List<String>> list = new ArrayList<List<String>>();
 			list.add(generateHeader());
@@ -288,32 +289,11 @@ public class CommonUtil {
 				tempIcsc = icsc;
 
 				l1 = new ArrayList<String>();
-				l1.add(changeDateFormat(new Date(), Constant.dateStandard));
-				l1.add(tempIcsc.getHEI_APPL_LEGAPPLID());
 				l1.add(tempIcsc.getHEI_APPL_KPTNO());
-				l1.add(tempIcsc.getHEI_APPL_APPLSTAT());
+				l1.add(tempIcsc.getHEI_APPL_LEGAPPLID());
 				l1.add(formatStringDate(tempIcsc.getHEI_APPL_DATE(), Constant.dateStandardNew));
-				l1.add(tempIcsc.getHEI_APPL_USERID());
-				l1.add(String.valueOf(tempIcsc.getHEI_APPL_COLLCTR()));
-				l1.add(tempIcsc.getHEI_APPL_COLLKPTNO());
-				l1.add(tempIcsc.getHEI_APPL_IDTYPE());
-				l1.add(tempIcsc.getHEI_APPL_RLTNCD());
-				l1.add(String.valueOf(tempIcsc.getHEI_APPLTF_FEEAMT()));
-				l1.add(tempIcsc.getHEI_APPLFR_RTYPE());
-				l1.add(tempIcsc.getHEI_APPLTXN_TXNCD());
-				l1.add(tempIcsc.getHEI_APPLTXN_LICCLASS());
-				l1.add(String.valueOf(tempIcsc.getHEI_APPLFR_FEEAMT()));
-				l1.add(String.valueOf(tempIcsc.getHEI_CS_CARDVERNO()));
-				l1.add(tempIcsc.getHEI_CS_USERID());
-				l1.add(tempIcsc.getHEI_APPLHIS_USERID());
-				l1.add(String.valueOf(tempIcsc.getHEI_AJI_LCCRIME()));
-				l1.add(String.valueOf(tempIcsc.getHEI_AJI_LCTDIS()));
-				l1.add(String.valueOf(tempIcsc.getHEI_AJI_LCNEG()));
-				l1.add(String.valueOf(tempIcsc.getHEI_AJI_CLCNT()));
 				l1.add(getCurrentDateString());
 				l1.add(tempIcsc.getHEI_RV_IND());
-				l1.add(tempIcsc.getHEI_PR_ACTRMK1());
-				l1.add(tempIcsc.getHEI_PR_ACTRMK2());
 
 				list.add(l1);
 
@@ -347,31 +327,12 @@ public class CommonUtil {
 
 	private static List<String> generateHeader() {
 		List<String> header = new ArrayList<String>();
-		header.add("Current Date");
-		header.add("TEI_APPL_LEGAPPLID");
-		header.add("TEI_APPL_KPTNO");
-		header.add("TEI_APPL_APPLSTAT");
-		header.add("TEI_APPL_DATE");
-		header.add("TEI_APPL_USERID");
-		header.add("TEI_APPL_COLLCTR");
-		header.add("TEI_APPL_COLLKPTNO");
-		header.add("TEI_APPL_IDTYPE");
-		header.add("TEI_APPL_RLTNCD");
-		header.add("TEI_APPLTF_FEEAMT");
-		header.add("TEI_APPLFR_RTYPE");
-		header.add("TEI_APPLTXN_TXNCD");
-		header.add("TEI_APPLTXN_LICCLASS");
-		header.add("TEI_APPLFR_FEEAMT");
-		header.add("TEI_CS_CARDVERNO");
-		header.add("TEI_CS_USERID");
-		header.add("TEI_APPLHIS_USERID");
-		header.add("TEI_AJI_LCCRIME");
-		header.add("TEI_AJI_LCTDIS");
-		header.add("TEI_AJI_LCNEG");
-		header.add("TEI_AJI_CLCNT");
-		header.add("TEI_CREATE_DT");
-		header.add("TEI_PR_ACTRMK1");
-		header.add("TEI_PR_ACTRMK2");
+		header.add("HEI_APPL_KPTNO");
+		header.add("HEI_APPL_LEGAPPLID");
+		header.add("HEI_APPL_DATE");
+		header.add("HEI_CREATE_DT");
+		header.add("HEI_RV_IND");
+		
 		return header;
 	}
 
@@ -402,7 +363,7 @@ public class CommonUtil {
 
 	public static boolean configAuthentication() throws IOException {
 		InputStream inputStream = new FileInputStream(new File("C:/auth/auth.properties"));
-		InputStream input = Skp20Application.class.getClassLoader().getResourceAsStream("config.properties");
+		InputStream input = Skp21Application.class.getClassLoader().getResourceAsStream("config.properties");
 		
 
 		OutputStream output = new FileOutputStream(

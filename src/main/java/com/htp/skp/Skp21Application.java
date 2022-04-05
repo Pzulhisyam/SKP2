@@ -21,8 +21,8 @@ import com.htp.skp.oracle.service.FeeReductionRepository;
 import com.htp.skp.oracle.service.ProblRecordRepository;
 
 @SpringBootApplication
-public class Skp20Application implements CommandLineRunner {
-	private static Logger log = LoggerFactory.getLogger(Skp20Application.class);
+public class Skp21Application implements CommandLineRunner {
+	private static Logger log = LoggerFactory.getLogger(Skp21Application.class);
 
 	@Autowired
 	private ExtractICSCRepository iscsRepository;
@@ -50,7 +50,7 @@ public class Skp20Application implements CommandLineRunner {
 		log.info("STARTING THE APPLICATION");
 //		Skp20Application skp = new Skp20Application();
 //		if(skp.authentication()) {
-		SpringApplication.run(Skp20Application.class, args);
+		SpringApplication.run(Skp21Application.class, args);
 //		}
 		log.info("APPLICATION FINISHED");
 	}
