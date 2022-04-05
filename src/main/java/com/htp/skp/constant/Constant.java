@@ -2,6 +2,7 @@ package com.htp.skp.constant;
 
 public class Constant {
 
+	public final static String JsonLogFilePath = "C:/OracleConn/SKP21/log/icsc.json";
 	
 	public final static String ExcelLogFilePath = "C:/OracleConn/SKP21/log/icsc.xlsx";
 	

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="SemakanRekodKemaskiniBulanan" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="5e79fb81-35d7-4bba-bc88-275f5a7f9308">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="ireport.scriptlethandling" value="0"/>
+	<property name="ireport.encoding" value="UTF-8"/>
+	<import value="net.sf.jasperreports.engine.*"/>
+	<import value="java.util.*"/>
+	<import value="net.sf.jasperreports.engine.data.*"/>
+	<field name="HEI_APPL_LEGAPPLID" class="java.lang.String"/>
+	<field name="HEI_APPL_DATE" class="java.lang.String"/>
+	<field name="HEI_CREATE_DT" class="java.lang.String"/>
+	<field name="HEI_RV_IND" class="java.lang.String"/>
+	<field name="HEI_APPL_KPTNO" class="java.lang.String"/>
+	<variable name="variable1" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="47" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText" x="149" y="0" width="261" height="47" uuid="3f8cb2c5-1d86-4f9b-a9b4-5605aa6f860f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[SENARAI REKOD YANG DIKEMASKINI BULAN MAC 2022]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="46" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText" x="0" y="26" width="73" height="20" uuid="4d376220-320c-4e90-9e59-2893199fdc89"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Jumlah rekod :]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText" x="0" y="16" width="110" height="16" uuid="734b982b-e931-4e46-af82-9dd7bea13a18"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[HEI_APPL_KPTNO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="110" y="17" width="147" height="16" uuid="3cc4ffdc-167b-415a-8beb-54fb9ef4b435"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[HEI_APPL_LEGAPPLID]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="368" y="17" width="111" height="16" uuid="3f692636-445d-42b2-bb59-bf23e5cb0fe6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[HEI_CREATE_DT]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="257" y="16" width="111" height="16" uuid="914e510a-a1e2-43e5-9b13-54982d9ee6b2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[HEI_APPL_DATE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement key="staticText" x="479" y="17" width="76" height="16" uuid="e5b6fc8d-a115-43ed-8fcc-9c361711a1c6"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[HEI_RV_IND]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="34" splitType="Stretch">
+			<staticText>
+				<reportElement key="staticText" x="0" y="0" width="555" height="14" uuid="fd0df656-17a5-4aa0-8f1b-c9401062eb5e"/>
+				<textElement textAlignment="Center" verticalAlignment="Top"/>
+				<text><![CDATA[--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------]]></text>
+			</staticText>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="0" y="14" width="110" height="20" uuid="20f5612e-257e-40fb-98bf-9d030e946567"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{HEI_APPL_KPTNO}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="110" y="14" width="147" height="20" uuid="d2335859-1af6-44ea-9def-2dc7b27e998a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{HEI_APPL_LEGAPPLID}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="257" y="14" width="111" height="20" uuid="69ad18b3-8961-414b-8b9f-eec977268891"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{HEI_APPL_DATE}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="368" y="14" width="111" height="20" uuid="bff05c67-29aa-41c6-a488-e5d0b7087993"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{HEI_CREATE_DT}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="false">
+				<reportElement key="textField" x="479" y="14" width="76" height="20" uuid="9ce42763-27e3-488f-8811-aa3e7cb0e359"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{HEI_RV_IND}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="61" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
