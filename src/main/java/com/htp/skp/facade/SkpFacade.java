@@ -4,10 +4,12 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.htp.skp.Skp21Application;
 import com.htp.skp.constant.Constant;
@@ -32,6 +34,7 @@ import com.htp.skp.oracle.service.CardStatusRepository;
 import com.htp.skp.oracle.service.FeeReductionRepository;
 import com.htp.skp.oracle.service.ProblRecordRepository;
 import com.htp.skp.report.SenaraiKemaskiniRekod;
+import com.htp.skp.report.SimpleReportExporter;
 import com.htp.skp.util.AESUtil;
 import com.htp.skp.util.CommonUtil;
 
@@ -116,45 +119,44 @@ public class SkpFacade {
 		}
 	}
 
-	public void insertDataTemp() {
-		long extractStartTime = System.currentTimeMillis();
-
-		List<THEI_EXTRACT_ICSC> icscList = new ArrayList<THEI_EXTRACT_ICSC>();
-
-//		String startDate = CommonUtil.getDate("startDate");
-//		String endDate = CommonUtil.getDate("endDate");
-		String startDate = "2012/02/13";
-		String endDate = "2012/02/28"; //for data testing
-		List<APPLICATION> list = appRepository.findRecordById(startDate, endDate,"2021011002100901003");
-
-		if (list.size() != 0) {
-			for (int i = 0; i < list.size(); i++) {
-				if (list.get(i) != null) {
-					APPLICATION app = list.get(i);
-//					THEI_EXTRACT_ICSC icsc = insertICSCBean(app);
-//					iscsRepository.save(icsc);
-//				    icscList.add(icsc); //for excell
-				} else {
-					log.info("no beds found");
-				}
-			}
-		}
-
-		long extractStopTime = System.currentTimeMillis();
-		float extractRunTime = extractStopTime - extractStartTime;
-		float result = extractRunTime / 1000;
-		CommonUtil.printOut("Run time: " + result);
-//		try {
-//			CommonUtil.generateJsonObjExcel(icscList);
-//		} catch (IOException e) {
-//			e.printStackTrace();
+//	public void insertDataTemp() {
+//		long extractStartTime = System.currentTimeMillis();
+//
+//		List<THEI_EXTRACT_ICSC> icscList = new ArrayList<THEI_EXTRACT_ICSC>();
+//
+////		String startDate = CommonUtil.getDate("startDate");
+////		String endDate = CommonUtil.getDate("endDate");
+//		String startDate = "2012/02/13";
+//		String endDate = "2012/02/28"; //for data testing
+//		List<APPLICATION> list = appRepository.findRecordById(startDate, endDate,"2021011002100901003");
+//
+//		if (list.size() != 0) {
+//			for (int i = 0; i < list.size(); i++) {
+//				if (list.get(i) != null) {
+//					APPLICATION app = list.get(i);
+////					THEI_EXTRACT_ICSC icsc = insertICSCBean(app);
+////					iscsRepository.save(icsc);
+////				    icscList.add(icsc); //for excell
+//				} else {
+//					log.info("no beds found");
+//				}
+//			}
 //		}
-	
-		
-	}
+//
+//		long extractStopTime = System.currentTimeMillis();
+//		float extractRunTime = extractStopTime - extractStartTime;
+//		float result = extractRunTime / 1000;
+//		CommonUtil.printOut("Run time: " + result);
+////		try {
+////			CommonUtil.generateJsonObjExcel(icscList);
+////		} catch (IOException e) {
+////			e.printStackTrace();
+////		}
+//	
+//		
+//	}
 	public void insertData() throws JRException, Exception {
 		long extractStartTime = System.currentTimeMillis();
-		StringBuilder url = new StringBuilder();
 
 		List<THEI_EXTRACT_ICSC> icscList = new ArrayList<THEI_EXTRACT_ICSC>();
 
@@ -162,93 +164,40 @@ public class SkpFacade {
 //		String endDate = CommonUtil.getDate("endDate");
 //		String startDate = "2012/02/13";
 //		String endDate = "2012/02/28"; //for data testing
-//		List<THEI_EXTRACT_ICSC> list = iscsRepository.findAllRecord();
-//
-//		if (list.size() != 0) {
-//			for (int i = 0; i < list.size(); i++) {
-//				if (list.get(i) != null) {
-//////					APPLICATION app = list.get(i);
-//					THEI_EXTRACT_ICSC icsc = list.get(i);
-//////					iscsRepository.save(icsc);
-//				    icscList.add(icsc); //for excell
-//				} else {
-//					log.info("no beds found");
-//				}
-//			}
-//		}
+		List<THEI_EXTRACT_ICSC> list = iscsRepository.findAllRecord();
+
+		if (list.size() != 0) {
+			for (int i = 0; i < list.size(); i++) {
+				if (list.get(i) != null) {
+					THEI_EXTRACT_ICSC icsc = list.get(i);
+				    icscList.add(icsc); //for report
+				} else {
+					log.info("no beds found");
+				}
+			}
+		}
+		
+        SenaraiKemaskiniRekod reportFiller = new SenaraiKemaskiniRekod();
+        reportFiller.setReportFileName("SemakanRekodKemaskiniBulanan.jrxml");
+        reportFiller.compileReport();
+        
+//        Map<String, Object> parameters = new HashMap<>();
+//        parameters.put("title", "Employee Report Example");
+//        
+//        reportFiller.setParameters(parameters);
+        reportFiller.fillReport(icscList);
+        
+        SimpleReportExporter simpleExporter = new SimpleReportExporter();
+        simpleExporter.setJasperPrint(reportFiller.getJasperPrint());
+        
+        simpleExporter.exportToPdf("SemakanRekodKemaskiniBulanan.pdf", "test");
 
 		long extractStopTime = System.currentTimeMillis();
 		float extractRunTime = extractStopTime - extractStartTime;
 		float result = extractRunTime / 1000;
 		CommonUtil.printOut("Run time: " + result);
-		//			CommonUtil.generateJsonObjExcel(icscList);
-//		url.append("PDServlet?report=SemakanRekodKemaskiniBulanan");
-		SenaraiKemaskiniRekod t = new SenaraiKemaskiniRekod();
-		t.generatePdf(icscList);
+        
 	}
-
-//	private THEI_EXTRACT_ICSC insertICSCBean(APPLICATION app) {
-//
-//		APPL_HISTORY applHistory = findApplHistory(app);
-//		APPL_TXN_FEE txnFee = findTxnFee(app);
-//		APPL_TXN txn = findTxn(app);
-//		APPNT_JPN_INFO jpnInfo = findJpnInfo(app);
-//		CARD_STATUS cardStatus = findCardStatus(app);
-//		APPL_FEE_REDUCTION feeReduction = findFeeReduction(app);
-//		PROBL_RECORD record = findProblRecord(app);
-//
-//		THEI_EXTRACT_ICSC icsc = new THEI_EXTRACT_ICSC();
-//		icsc.setHEI_APPL_LEGAPPLID(app.getLEGAPPLID() != null ? app.getLEGAPPLID() : "");
-//		icsc.setHEI_APPL_KPTNO(app.getKPTNO() != null ? app.getKPTNO() : "");
-//		icsc.setHEI_APPL_APPLSTAT(app.getAPPLSTAT() != null ? app.getAPPLSTAT() : "");
-//		icsc.setHEI_APPL_DATE(
-//				app.getTIMESTAMP() != null ? CommonUtil.changeDateFormat(app.getTIMESTAMP(), Constant.dateStandardNew)
-//						: CommonUtil.getCurrentDateString());
-//		icsc.setHEI_APPL_USERID(app.getUSERID() != null ? app.getUSERID() : "");
-//
-////		icsc.setHEI_APPL_COLLCTR(app.getCOLLCENTER() != null ? app.getCOLLCENTER() : 0);
-//		icsc.setHEI_APPL_COLLCTR(app.getCOLLCENTER() != null ? findBranchInfo(app) : 0);
-//
-//		icsc.setHEI_APPL_COLLKPTNO(app.getCOLLKPTNO() != null ? app.getCOLLKPTNO() : "");
-//		icsc.setHEI_APPL_IDTYPE(app.getIDTYPE() != null ? app.getIDTYPE() : "");
-//		icsc.setHEI_APPL_RLTNCD(app.getRELATIONCODE() != null ? app.getRELATIONCODE() : "");
-//		icsc.setHEI_APPLTF_FEEAMT(feeReduction.getFEEAMT() != null ? feeReduction.getFEEAMT() : 0);
-//		icsc.setHEI_APPLFR_RTYPE(feeReduction.getREDUCTIONTYPE() != null ? feeReduction.getREDUCTIONTYPE() : "");
-//		icsc.setHEI_APPLTXN_TXNCD(txn.getTXNCODE() != null ? txn.getTXNCODE() : "");
-//		icsc.setHEI_APPLTXN_LICCLASS(txn.getLICCLASS() != null ? txn.getLICCLASS() : "");
-//		icsc.setHEI_APPLFR_FEEAMT(txnFee.getFEEAMT() != null ? txnFee.getFEEAMT() : 0);
-//		icsc.setHEI_CS_CARDVERNO(cardStatus.getCARDVERSIONNO() != null ? cardStatus.getCARDVERSIONNO() : 0);
-//		icsc.setHEI_CS_USERID(cardStatus.getUSERID() != null ? cardStatus.getUSERID() : "");
-//		icsc.setHEI_APPLHIS_USERID(applHistory.getUSERID() != null ? applHistory.getUSERID() : "");
-//		icsc.setHEI_AJI_LCCRIME(jpnInfo.getLOSTCNTCRIME() != null ? jpnInfo.getLOSTCNTCRIME() : 0);
-//		icsc.setHEI_AJI_LCTDIS(jpnInfo.getLOSTCNTDIS() != null ? jpnInfo.getLOSTCNTDIS() : 0);
-//		icsc.setHEI_AJI_LCNEG(jpnInfo.getLOSTCNTNEG() != null ? jpnInfo.getLOSTCNTNEG() : 0);
-//		icsc.setHEI_AJI_CLCNT(jpnInfo.getCARDLOSTCNT() != null ? jpnInfo.getCARDLOSTCNT() : 0);
-//		icsc.setHEI_CREATE_DT(CommonUtil.getCurrentDateString());
-//		icsc.setHEI_RV_IND(Constant.fromOra);
-//
-//		if (record.getACTREMARKS() != null && !"".equalsIgnoreCase(record.getACTREMARKS())
-//				&& record.getACTREMARKS().length() <= 60) {
-//			icsc.setHEI_PR_ACTRMK1(record.getACTREMARKS());
-//			icsc.setHEI_PR_ACTRMK2("");
-////			if(icsc.getHEI_PR_ACTRMK1().length() > 60) { //for checking
-////				CommonUtil.printOut(CommonUtil.checkLength(app, icsc, icsc.getHEI_PR_ACTRMK1()));
-////			}
-//
-//		} else {
-//			icsc.setHEI_PR_ACTRMK1(CommonUtil.devideRemarks(record.getACTREMARKS(), true));
-//			icsc.setHEI_PR_ACTRMK2(CommonUtil.devideRemarks(record.getACTREMARKS(), false));
-//
-////			if(icsc.getHEI_PR_ACTRMK1().length() > 60) {
-////				CommonUtil.printOut(CommonUtil.checkLength(app, icsc, icsc.getHEI_PR_ACTRMK1()));
-////			}
-////			if(icsc.getHEI_PR_ACTRMK2().length() > 60) {
-////				CommonUtil.printOut(CommonUtil.checkLength(app, icsc, icsc.getHEI_PR_ACTRMK2()));
-////			}
-//		}
-//
-//		return icsc;
-//	}
 
 	// APPL_HISTORY
 	private APPL_HISTORY findApplHistory(APPLICATION app) {
